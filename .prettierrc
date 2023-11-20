@@ -1,0 +1,7 @@
+{
+  "printWidth": 100,       // Ensures that lines of code do not exceed 100 characters.
+  "singleQuote": true,     // Encourages the use of single quotes for strings.
+  "trailingComma": "all",  // Adds a trailing comma to all arrays and objects.
+  "tabWidth": 2,           // Sets the indentation size to 2 spaces.
+  "bracketSameLine": true  // Places opening and closing brackets on the same line.
+}
