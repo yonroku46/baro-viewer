@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '@/styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Next App',
-  description: 'Home by next app',
+  title: 'Next App | TODO',
+  description: 'Todo by next app',
 };
 
-export default function RootLayout({
+export default function TopicLayout({
   children,
 }: {
   children: React.ReactNode;
