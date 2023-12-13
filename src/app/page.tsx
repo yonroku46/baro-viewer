@@ -9,7 +9,7 @@ export default function Home() {
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
-          <Link href="/todo">go to todo</Link>
+          <Link href="/topic/todo">go to todo</Link>
         </p>
         <div>
           <a

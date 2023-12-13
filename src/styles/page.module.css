@@ -104,6 +104,10 @@
   transform: translateZ(0);
 }
 
+.color {
+  color: var(--pcolor);
+}
+
 .logo {
   position: relative;
 }
