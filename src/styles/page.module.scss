@@ -111,6 +111,24 @@
 .logo {
   position: relative;
 }
+.socialArea {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  .socialBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: -webkit-fill-available;
+    height: 38px;
+    padding: 4px 16px;
+    img {
+      margin-right: 8px;
+    }
+  }
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from '@/styles/page.module.css';
+import styles from '@/styles/page.module.scss';
 
 function TopicCategoryPage({ params }: { params: { category: string } }) {
   const [num, setNum] = useState<number>(0);
