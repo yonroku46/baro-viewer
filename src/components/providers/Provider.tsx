@@ -10,17 +10,15 @@ import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-
 const Alert = forwardRef<HTMLDivElement, AlertProps>(
   function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   },
 );
 
-function Providers({ children }: { children: React.ReactNode }) {
-  const [open, setOpen] = useState(false);
+export default function Providers({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState<boolean>(false);
+  const [alertMsg, setAlertMsg] = useState<string>('');
   const { theme, setTheme } = useTheme();
 
   const handleClick = () => {
@@ -39,10 +37,9 @@ function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeProvider>
-      <Box sx={{ width: '100%' }}>
+      {/* <Box sx={{ width: '100%' }}>
         <LinearProgress color="primary" />
       </Box>
-      <Header />
       <Stack spacing={1} sx={{ width: '100%' }}>
         <Button variant="outlined" onClick={handleClick}>
           Open success snackbar
@@ -52,14 +49,11 @@ function Providers({ children }: { children: React.ReactNode }) {
             onClose={handleClose}
             severity="success"
             sx={{ width: '100%' }}>
-            This is a success message!
+            {alertMsg}
           </Alert>
         </Snackbar>
-      </Stack>
+      </Stack> */}
       {children}
-      <Footer />
     </ThemeProvider>
   );
 }
-
-export default Providers;

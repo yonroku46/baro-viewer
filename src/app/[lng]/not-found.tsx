@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: '404 - not found',
+  title: 'Sorry',
   description: 'Page not found',
-};
+}
 
 export default function NotFound() {
   return (
     <div>
       Page not found
-      <Link href="/">Back</Link>
+      <Link href="/">Home</Link>
     </div>
   );
 }

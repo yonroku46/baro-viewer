@@ -1,8 +1,14 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/page.module.scss';
 
-export default function Login() {
+export const metadata: Metadata = {
+  title: 'SmoothiLab | Login',
+  description: 'Welcome to SmoothiLab',
+}
+
+export default function LoginPage() {
   return (
     <main className={styles.main}>
       <div>

@@ -15,7 +15,6 @@
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  font-family: var(--font-mono);
 }
 
 .description a {
@@ -36,7 +35,6 @@
 
 .code {
   font-weight: 700;
-  font-family: var(--font-mono);
 }
 
 .grid {
@@ -126,6 +124,16 @@
     img {
       margin-right: 8px;
     }
+  }
+}
+.contents {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 16px;
+  .title {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -232,10 +240,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
   .logo {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
