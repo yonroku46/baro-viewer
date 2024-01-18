@@ -6,12 +6,14 @@ export const metadata: Metadata = {
   description: 'Welcome to SmoothiLab',
 }
 
-export default function ShopInfoPage({ params }: { params: { lng: string, shopid: string } }) {
+export default function ShopInfoPage(
+  { params: { lng, shopid} }: { params: { lng: string, shopid: string } }
+) {
   return (
     <main>
       <h1>info</h1>
-      <div>shopid: {params.shopid}</div>
-      <Link href={`/shop/${params.shopid}/booking`}>
+      <div>shopid: {shopid}</div>
+      <Link href={`/${lng}/shop/${shopid}/booking`}>
         booking
       </Link>
     </main>

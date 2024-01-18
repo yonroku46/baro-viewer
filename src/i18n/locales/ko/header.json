@@ -1,0 +1,25 @@
+{
+  "category": {
+    "mypage": "마이페이지",
+    "service": "서비스",
+    "shop": "매장찾기",
+    "dashboard": "대쉬보드",
+    "login": "로그인"
+  },
+  "mypage": {
+    "mypage": "마이페이지",
+    "history": "대기이력"
+  },
+  "service": {
+    "about": "서비스소개",
+    "help": "이용방법",
+    "inquiry": "문의사항",
+    "contract": "서비스계약"
+  },
+  "shop": {
+    "shop": "매장찾기"
+  },
+  "dashboard": {
+    "admin": "관리자페이지"
+  }
+}

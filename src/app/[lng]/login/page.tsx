@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from '@/styles/page.module.scss';
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export default function LoginPage() {
         <div className={styles.socialArea}>
           <button className={styles.socialBtn} type="button">
             <Image
-              src="/assets/img/google.svg"
+              src="/assets/icon/google.svg"
               alt="google Logo"
               width={24}
               height={24}
@@ -26,7 +25,7 @@ export default function LoginPage() {
           </button>
           <button className={styles.socialBtn} type="button">
             <Image
-              src="/assets/img/line.svg"
+              src="/assets/icon/line.svg"
               alt="line Logo"
               width={24}
               height={24}

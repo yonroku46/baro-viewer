@@ -1,35 +1,29 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import type { Metadata } from 'next'
 import { dir } from 'i18next'
-import Providers from '@/components/providers/Provider';
-import '@/styles/globals.scss';
 import { languages } from '@/i18n/settings'
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
-}
-
-const inter = Inter({ subsets: ['latin'] });
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import styles from '@/styles/page.module.scss';
 
 export const metadata: Metadata = {
   title: 'SmoothiLab',
   description: 'Welcome to SmoothiLab',
 }
 
-export default function RootLayout(
-  { children, params }: { children: React.ReactNode, params: { lng: string } }
+export async function generateStaticParams() {
+  return languages.map((lng: string) => ({ lng }))
+}
+
+export default async function RootLayout(
+  { children, params: { lng } }: { children: React.ReactNode, params: { lng: string } }
 ) {
   return (
-    <html lang={params.lng} dir={dir(params.lng)}>
-      <Header lng={params.lng} />
-      <body className={inter.className}>
-        <Providers>
-          {children}
-        </Providers>
+    <html lang={lng} dir={dir(lng)}>
+      <body>
+        <Header lng={lng} />
+        {children}
+        <Footer lng={lng} />
       </body>
-      <Footer lng={params.lng}/>
     </html>
-  );
+  )
 }

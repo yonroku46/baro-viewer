@@ -1,0 +1,25 @@
+{
+  "category": {
+    "mypage": "Mypage",
+    "service": "Service",
+    "shop": "Shop",
+    "dashboard": "Dashboard",
+    "login": "Login"
+  },
+  "mypage": {
+    "mypage": "Mypage",
+    "history": "History"
+  },
+  "service": {
+    "about": "About",
+    "help": "Help",
+    "inquiry": "Inquiry",
+    "contract": "Contract"
+  },
+  "shop": {
+    "shop": "Shop"
+  },
+  "dashboard": {
+    "admin": "Dashboard"
+  }
+}

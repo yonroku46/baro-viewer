@@ -15,11 +15,7 @@ export default function Page(
   return (
     <>
       <main>
-        <Link href={`/${lng}/shop/1`}>
-          <button type="button">
-            No1 Shop
-          </button>
-        </Link>
+        <p>Dashboard</p>
       </main>
     </>
   )

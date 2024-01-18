@@ -1,32 +1,38 @@
 import Image from 'next/image';
 import React from 'react';
+import { useTranslation } from '@/i18n'
+import { languages, fallbackLng } from '@/i18n/settings'
 import styles from '@/styles/page.module.scss';
 
-export default function Footer(
+export default async function Footer (
   { lng }: { lng: string }
 ) {
-  return (
+
+  if (languages.indexOf(lng) < 0) lng = fallbackLng
+  const { t } = await useTranslation(lng, 'footer')
+
+  return(
     <footer>
       <div className={styles.contents}>
         <Image
-          src="/logo.svg"
           alt="App Logo"
-          width={24}
-          height={24}
+          src="/assets/icon/app-icon.svg"
+          width={28}
+          height={28}
           priority
         />
-        <div className={styles.title}>
+        <div className={styles.description}>
           <span>
-            상호명 (주)스무디랩
+            {t('name')}
           </span>
           <span>
-            이메일 help@smoothilab.com
+            {t('email')}
           </span>
           <span>
-            ©2024 SMOOTHILAB CORP. ALL RIGHT RESERVED
+            ©2024 SmoothiLab Corp. All rights reserved
           </span>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}

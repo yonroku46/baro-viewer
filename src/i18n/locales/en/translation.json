@@ -1,0 +1,11 @@
+{
+  "h1": "A simple example",
+  "title": "Home",
+  "welcome": "Welcome to Next.js 13/14 <1>with the new app directory features</1> and i18next",
+  "languages": {
+    "title": "Languages",
+    "ko": "Korean",
+    "ja": "Japanese",
+    "en": "English"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "category": {
+    "mypage": "マイページ",
+    "service": "サービス",
+    "shop": "店舗検索",
+    "dashboard": "ダッシュボード",
+    "login": "ログイン"
+  },
+  "mypage": {
+    "mypage": "マイページ",
+    "history": "待機履歴"
+  },
+  "service": {
+    "about": "サービス紹介",
+    "help": "利用方法",
+    "inquiry": "お問い合わせ",
+    "contract": "サービス開始"
+  },
+  "shop": {
+    "shop": "店舗検索"
+  },
+  "dashboard": {
+    "admin": "管理者ページ"
+  }
+}

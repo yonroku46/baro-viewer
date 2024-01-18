@@ -10,14 +10,21 @@ export default function Page(
 ) {
 
   if (languages.indexOf(lng) < 0) lng = fallbackLng
-  const { t } = useTranslation(lng)
+  const { t } = useTranslation(lng, 'mypage')
 
+  const [counter, setCounter] = useState(0)
   return (
     <>
       <main>
-        <Link href={`/${lng}/shop/1`}>
+        {t('h1')}
+        <p>{t('counter', { count: counter })}</p>
+        <div>
+          <button onClick={() => setCounter(Math.max(0, counter - 1))}>-</button>
+          <button onClick={() => setCounter(Math.min(10, counter + 1))}>+</button>
+        </div>
+        <Link href={`/${lng}`}>
           <button type="button">
-            No1 Shop
+            {t('back-to-home')}
           </button>
         </Link>
       </main>
