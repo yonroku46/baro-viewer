@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  reactStrictMode: true,
   swcMinify: true,
-  // experimental: {
-  //   // Required: for next 13
-  //   appDir: true
-  // }
+  experimental: {
+    fontLoaders: [
+      { loader: 'next/font/google', options: { subsets: ['latin'] } },
+    ],
+  },
 }
 
 module.exports = nextConfig
