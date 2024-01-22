@@ -71,6 +71,7 @@ button {
   border: none;
   border-radius: var(--border-radius);
   padding: 6px 18px;
+  font-family: inherit;
   &:hover {
     cursor: pointer;
   }

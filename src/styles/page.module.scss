@@ -75,6 +75,19 @@
   border: none;
 }
 
+.lngDialog {
+  .title {
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  .selectBtn {
+    display: inline;
+    .checked {
+      color: yellowgreen;
+    }
+  }
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .content {

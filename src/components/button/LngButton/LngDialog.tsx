@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { i18n } from 'i18next'
 import { AvailableLanguages } from '@/i18n/settings'
+import styles from '@/styles/page.module.scss'
 
 import Avatar from '@mui/material/Avatar'
 import List from '@mui/material/List'
@@ -10,6 +11,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import DialogTitle from '@mui/material/DialogTitle'
 import Dialog from '@mui/material/Dialog'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export type DialogProps = {
   i18n: i18n
@@ -43,11 +45,22 @@ export default function LngDialog (props: DialogProps) {
 
   return (
     <>
-      <Dialog onClose={onClose} open={open}>
-        <DialogTitle>{t('languages.title')}</DialogTitle>
+      <Dialog 
+        onClose={onClose}
+        open={open}
+        maxWidth={'xs'}
+        fullWidth={true}
+        className={styles.lngDialog}
+      >
+        <DialogTitle className={styles.title}>
+          {t('languages.title')}
+        </DialogTitle>
         <List sx={{ pt: 0 }}>
           {languagesList.map((languages) => (
-            <ListItem disableGutters key={languages.code}>
+            <ListItem 
+              disableGutters key={languages.code}
+              className={styles.selectBtn}
+            >
               <Link href={`/${languages.lng}${path}`}>
                 <ListItemButton>
                   <ListItemAvatar>
@@ -59,6 +72,7 @@ export default function LngDialog (props: DialogProps) {
                     />
                   </ListItemAvatar>
                   <ListItemText primary={languages.label} />
+                  {languages.lng === lng && <CheckCircleIcon className={styles.checked}/>}
                 </ListItemButton>
               </Link>
             </ListItem>
