@@ -32,7 +32,7 @@ export default function LngButton (
 
   return (
     <>
-      <Button variant="text" onClick={handleClickOpen}>
+      <Button variant="text" onClick={handleClickOpen} style={{ padding: 0 }}>
         <Avatar 
           alt={LanguagesCode[lng]}
           variant="rounded"

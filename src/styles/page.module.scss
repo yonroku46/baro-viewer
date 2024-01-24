@@ -19,14 +19,26 @@
   gap: 4px;
 }
 
-.betweenFlex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .logo {
   position: relative;
+}
+
+.mainColor {
+  color: var(--main-color);
+}
+
+.navMenu {
+  display: flex;
+  gap: 24px;
+  color: white;
+  padding-left: 8px;
+  .menu {
+    padding: 8px 0;
+    transition: all 0.5s;
+    &:hover {
+      box-shadow: inset 0 -2px 0 0px white;
+    }
+  }
 }
 
 .socialArea {
@@ -62,6 +74,18 @@
   max-width: var(--max-width);
   margin: auto;
   padding: 16px;
+}
+.headerContents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.footerContents {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 16px;
+  border-top: 1px solid lightgray;
   .description {
     display: flex;
     flex-direction: column;
@@ -98,6 +122,10 @@
     margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
+  }
+  .navMenu {
+    justify-content: center;
+    padding-left: 0;
   }
 }
 

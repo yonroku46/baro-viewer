@@ -41,7 +41,9 @@ export default async function RootLayout(
     <html lang={lng} dir={dir(lng)}>
       <body className={bodyClassName}>
         <Header lng={lng} />
-        {children}
+        <main className={styles.contents}>
+          {children}
+        </main>
         <Footer lng={lng} />
       </body>
     </html>

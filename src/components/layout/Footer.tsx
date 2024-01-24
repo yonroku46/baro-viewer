@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from 'next/image'
+import React from 'react'
 import { useTranslation } from '@/i18n'
 import { languages, fallbackLng } from '@/i18n/settings'
-import styles from '@/styles/page.module.scss';
+import styles from '@/styles/page.module.scss'
 
 export default async function Footer (
   { lng }: { lng: string }
@@ -13,17 +13,17 @@ export default async function Footer (
 
   return(
     <footer>
-      <div className={styles.contents}>
+      <div className={styles.footerContents}>
         <Image
-          alt="App Logo"
-          src="/assets/icon/app-icon.svg"
-          width={28}
-          height={28}
+          alt="compLogo"
+          src="/assets/img/comp-logo.png"
+          width={100}
+          height={30}
           priority
         />
         <div className={styles.description}>
           <span>
-            {t('name')}
+            {t('corporation')}
           </span>
           <span>
             {t('email')}
