@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { extractDelimiter } from '@/common/utils/StringUtils'
 import styles from '@/styles/page.module.scss'
 
 export type MenuItem = {
@@ -11,20 +12,24 @@ export type MenuItem = {
 }
 
 export default function SubNav (
-  { menus }: { menus: Array<MenuItem> }
+  { groupedMenu }: { groupedMenu: Record<string, Array<MenuItem>> }
 ) {
   const path = usePathname()
-  console.log(path)
-  console.log(menus[0].href)
+  const categoryPath = extractDelimiter(path)
 
   return(
-    <>
-      {menus.map((menu) => (
-        path.startsWith(menu.href) &&
-          <>
-            {menu.name}
-          </>
+    <nav role='navigation' className={styles.navSubMenu}>
+      {Object.entries(groupedMenu).map(([category, menus]) => (
+        menus.map((menu) => (
+          categoryPath && menu.href.startsWith(categoryPath) && (
+            <div key={menu.name} className={`${styles.menu} ${path === menu.href && styles.active}`}>
+              <Link href={menu.href}>
+                {menu.name}
+              </Link>
+            </div>
+          )
+        ))
       ))}
-    </>
+    </nav>
   )
 }

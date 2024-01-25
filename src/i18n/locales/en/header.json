@@ -1,13 +1,13 @@
 {
   "category": {
+    "login": "Login",
     "mypage": "Mypage",
     "service": "Service",
     "shop": "Shop",
-    "dashboard": "Dashboard",
-    "login": "Login"
+    "admin": "Admin"
   },
   "mypage": {
-    "mypage": "Mypage",
+    "account": "Account",
     "history": "History"
   },
   "service": {
@@ -17,9 +17,11 @@
     "contract": "Contract"
   },
   "shop": {
-    "shop": "Shop"
+    "search": "ShopSearch"
   },
-  "dashboard": {
-    "admin": "Dashboard"
+  "admin": {
+    "dashboard": "Dashboard",
+    "inside": "InsideMode",
+    "outside": "OutsideMode"
   }
 }

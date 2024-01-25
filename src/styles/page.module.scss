@@ -1,12 +1,3 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
@@ -19,8 +10,14 @@
   gap: 4px;
 }
 
-.logo {
+.appLogo {
   position: relative;
+  filter: grayscale(1) brightness(10);
+}
+
+.appTitle {
+  letter-spacing: 4px;
+  font-weight: 700;
 }
 
 .mainColor {
@@ -31,12 +28,30 @@
   display: flex;
   gap: 24px;
   color: white;
-  padding-left: 8px;
+  padding: 0 8px;
   .menu {
     padding: 8px 0;
-    transition: all 0.5s;
+    transition: opacity 0.25s;
     &:hover {
-      box-shadow: inset 0 -2px 0 0px white;
+      opacity: 0.8;
+    }
+  }
+}
+
+.navSubMenu {
+  display: flex;
+  gap: 16px;
+  background-color: white;
+  padding: 0 16px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  .menu {
+    padding: 8px 0;
+    transition: color 0.25s;
+    &.active {
+      color: var(--main-color);
+    }
+    &:hover {
+      color: var(--main-color);
     }
   }
 }
@@ -94,7 +109,7 @@
 
 .loginBtn {
   font-weight: bold;
-  background-color: #ffffff70;
+  background-color: var(--sub-color);
   color: white;
   border: none;
 }
@@ -125,7 +140,11 @@
   }
   .navMenu {
     justify-content: center;
-    padding-left: 0;
+    padding: 0;
+  }
+  .navSubMenu {
+    justify-content: center;
+    padding: 0;
   }
 }
 
@@ -133,12 +152,6 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
 }
 

@@ -10,12 +10,12 @@ export default function ShopInfoPage(
   { params: { lng, shopid} }: { params: { lng: string, shopid: string } }
 ) {
   return (
-    <main>
+    <section>
       <h1>info</h1>
       <div>shopid: {shopid}</div>
       <Link href={`/${lng}/shop/${shopid}/booking`}>
         booking
       </Link>
-    </main>
-  );
+    </section>
+  )
 }

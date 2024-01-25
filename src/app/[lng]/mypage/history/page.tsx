@@ -10,13 +10,14 @@ export default function Page(
 ) {
 
   if (languages.indexOf(lng) < 0) lng = fallbackLng
-  const { t } = useTranslation(lng)
+  const { t } = useTranslation(lng, 'mypage')
 
+  const [counter, setCounter] = useState(0)
   return (
     <>
-      <main>
-        <p>Dashboard</p>
-      </main>
+      <section>
+        History
+      </section>
     </>
   )
 }

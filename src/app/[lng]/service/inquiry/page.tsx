@@ -16,17 +16,7 @@ export default function Page(
   return (
     <>
       <section>
-        {t('h1')}
-        <p>{t('counter', { count: counter })}</p>
-        <div>
-          <button onClick={() => setCounter(Math.max(0, counter - 1))}>-</button>
-          <button onClick={() => setCounter(Math.min(10, counter + 1))}>+</button>
-        </div>
-        <Link href={`/${lng}`}>
-          <button type="button">
-            {t('back-to-home')}
-          </button>
-        </Link>
+        Inquiry
       </section>
     </>
   )

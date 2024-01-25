@@ -1,13 +1,13 @@
 {
   "category": {
+    "login": "로그인",
     "mypage": "마이페이지",
     "service": "서비스",
-    "shop": "매장찾기",
-    "dashboard": "대쉬보드",
-    "login": "로그인"
+    "shop": "매장",
+    "admin": "관리자페이지"
   },
   "mypage": {
-    "mypage": "마이페이지",
+    "account": "계정정보",
     "history": "대기이력"
   },
   "service": {
@@ -17,9 +17,11 @@
     "contract": "서비스계약"
   },
   "shop": {
-    "shop": "매장찾기"
+    "search": "매장찾기"
   },
-  "dashboard": {
-    "admin": "관리자페이지"
+  "admin": {
+    "dashboard": "대쉬보드",
+    "inside": "운영모드",
+    "outside": "출력모드"
   }
 }

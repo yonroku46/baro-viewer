@@ -1,13 +1,13 @@
 {
   "category": {
+    "login": "ログイン",
     "mypage": "マイページ",
     "service": "サービス",
-    "shop": "店舗検索",
-    "dashboard": "ダッシュボード",
-    "login": "ログイン"
+    "shop": "店舗",
+    "admin": "管理ページ"
   },
   "mypage": {
-    "mypage": "マイページ",
+    "account": "アカウント",
     "history": "待機履歴"
   },
   "service": {
@@ -17,9 +17,11 @@
     "contract": "サービス開始"
   },
   "shop": {
-    "shop": "店舗検索"
+    "search": "店舗検索"
   },
-  "dashboard": {
-    "admin": "管理者ページ"
+  "admin": {
+    "dashboard": "ダッシュボード",
+    "inside": "運営モード",
+    "outside": "出力モード"
   }
 }

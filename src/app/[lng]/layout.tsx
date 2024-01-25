@@ -3,8 +3,9 @@ import { dir } from 'i18next'
 import { languages } from '@/i18n/settings'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import styles from '@/styles/page.module.scss'
 import { Noto_Sans_KR, Noto_Sans_JP, Noto_Sans } from 'next/font/google'
+import styles from '@/styles/page.module.scss'
+import '@/styles/global.scss'
 
 const notoSansKr = Noto_Sans_KR({
   weight: ['300','500','700'],

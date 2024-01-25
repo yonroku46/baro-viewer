@@ -13,12 +13,10 @@ export default function Page(
   const { t } = useTranslation(lng)
 
   return (
-    <section>
-      <Link href={`/${lng}/shop/1`}>
-        <button type="button">
-          No1 Shop
-        </button>
-      </Link>
-    </section>
+    <>
+      <section>
+        <p>Dashboard</p>
+      </section>
+    </>
   )
 }

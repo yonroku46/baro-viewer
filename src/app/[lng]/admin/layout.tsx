@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
-import '@/styles/global.scss'
 
 export const metadata: Metadata = {
-  title: 'SmoothiLab | Mypage',
+  title: 'SmoothiLab | Admin',
   description: 'Welcome to SmoothiLab',
 }
 
-export default async function MypageLayout(
+export default async function AdminLayout(
   { children }: { children: React.ReactNode }
 ) {
 

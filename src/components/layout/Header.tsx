@@ -1,4 +1,3 @@
-'use clinet'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslation } from '@/i18n'
@@ -15,14 +14,16 @@ export default async function Header (
   const { t } = await useTranslation(lng, 'header')
   
   const menuList: Array<MenuItem> = [
-    { category: t('category.mypage'), name: t('mypage.mypage'), href: `/${lng}/mypage` },
+    { category: t('category.mypage'), name: t('mypage.account'), href: `/${lng}/mypage` },
     { category: t('category.mypage'), name: t('mypage.history'), href: `/${lng}/mypage/history` },
     { category: t('category.service'), name: t('service.about'), href: `/${lng}/service` },
     { category: t('category.service'), name: t('service.help'), href: `/${lng}/service/help` },
     { category: t('category.service'), name: t('service.inquiry'), href: `/${lng}/service/inquiry` },
     { category: t('category.service'), name: t('service.contract'), href: `/${lng}/service/contract` },
-    { category: t('category.shop'), name: t('shop.shop'), href: `/${lng}/shop` },
-    { category: t('category.dashboard'), name: t('dashboard.admin'), href: `/${lng}/dashboard` },
+    { category: t('category.shop'), name: t('shop.search'), href: `/${lng}/shop` },
+    { category: t('category.admin'), name: t('admin.dashboard'), href: `/${lng}/admin` },
+    { category: t('category.admin'), name: t('admin.inside'), href: `/${lng}/admin/inside` },
+    { category: t('category.admin'), name: t('admin.outside'), href: `/${lng}/admin/outside` },
   ]
   const groupedMenu: Record<string, Array<MenuItem>> = {}
   menuList.forEach(menu => {
@@ -39,12 +40,12 @@ export default async function Header (
           <Image
             alt="appIcon"
             src="/assets/icon/app-icon.svg"
-            className={styles.logo}
+            className={styles.appLogo}
             width={28}
             height={28}
             priority
           />
-          <span className={styles.mainColor}>SmoothiLab</span>
+          <span className={styles.appTitle}>SmoothiLab</span>
         </Link>
         <div className={styles.flex}>
           <LngButton lng={lng} />
@@ -57,16 +58,14 @@ export default async function Header (
       </div>
       <nav role='navigation' className={styles.navMenu}>
         {Object.entries(groupedMenu).map(([category, menus]) => (
-          <>
-            <div key={category} className={styles.menu}>
-              <Link href={menus[0].href}>
-                {category}
-              </Link>
-            </div>
-            <SubNav menus={menus} />
-          </>
+          <div key={category} className={styles.menu}>
+            <Link href={menus[0].href}>
+              {category}
+            </Link>
+          </div>
         ))}
       </nav>
+      <SubNav groupedMenu={groupedMenu} />
     </header>
   )
 }
