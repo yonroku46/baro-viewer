@@ -58,7 +58,8 @@ export default function LngDialog (props: DialogProps) {
         <List sx={{ pt: 0 }}>
           {languagesList.map((languages) => (
             <ListItem 
-              disableGutters key={languages.code}
+              disableGutters
+              key={languages.code}
               className={styles.selectBtn}
             >
               <Link href={`/${languages.lng}${path}`}>

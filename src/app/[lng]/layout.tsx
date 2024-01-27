@@ -4,7 +4,6 @@ import { languages } from '@/i18n/settings'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { Noto_Sans_KR, Noto_Sans_JP, Noto_Sans } from 'next/font/google'
-import styles from '@/styles/page.module.scss'
 import '@/styles/global.scss'
 
 const notoSansKr = Noto_Sans_KR({
@@ -42,7 +41,7 @@ export default async function RootLayout(
     <html lang={lng} dir={dir(lng)}>
       <body className={bodyClassName}>
         <Header lng={lng} />
-        <main className={styles.contents}>
+        <main>
           {children}
         </main>
         <Footer lng={lng} />

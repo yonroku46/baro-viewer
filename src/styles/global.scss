@@ -59,6 +59,12 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+main {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 16px;
+}
+
 section {
   display: flex;
   flex-direction: column;

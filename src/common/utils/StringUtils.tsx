@@ -8,13 +8,13 @@ export function createState(len: number) {
   return result
 }
 
-export function currency(num: number): string {
-  return '¥' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+export function currency(num: number, unit: string): string {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + unit
 }
 
 export function calcDiscountRate(price: number, priceSale: number): string | undefined {
   if (priceSale !== undefined && priceSale < price) {
-    const discountRate = ((price - priceSale) / price) * 100;
+    const discountRate = ((price - priceSale) / price) * 100
     return discountRate.toString() + '% '
   }
   return undefined
@@ -25,7 +25,7 @@ export function dateToString(date: Date): string {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit'
-  });
+  })
   
   return formatDate.format(date)
 }

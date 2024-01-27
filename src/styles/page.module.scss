@@ -16,12 +16,16 @@
 }
 
 .appTitle {
-  letter-spacing: 4px;
+  letter-spacing: -1px;
   font-weight: 700;
 }
 
 .mainColor {
   color: var(--main-color);
+}
+
+.subColor {
+  color: var(--sub-color);
 }
 
 .navMenu {
@@ -85,11 +89,6 @@
   }
 }
 
-.contents {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 16px;
-}
 .headerContents {
   display: flex;
   justify-content: space-between;
@@ -127,6 +126,65 @@
   }
 }
 
+.contractInfo {
+  padding: 3rem 0;
+  text-align: center;
+  font-weight: bold;
+  white-space: break-spaces;
+  .title {
+    color: var(--main-color);
+    font-size: 1.4rem;
+  }
+  .subTitle {
+    font-size: 1.2rem;
+  }
+}
+
+.contractGroup {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  .contract {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 2rem 1.5rem;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .chip {
+        color: var(--main-color);
+        border-color: var(--main-color);
+        border-width: 2px;
+      }
+    }
+    .price {
+      border-bottom: 1px solid lightgray;
+      padding: 1rem 0;
+      font-size: 2rem;
+      font-weight: 700;
+      .subPrice {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-left: 8px;
+        opacity: 0.8;
+      }
+    }
+    .info {
+      margin-bottom: 1rem;
+    }
+    .selectBtn {
+      background-color: var(--main-color);
+      color: white;
+      font-weight: 700;
+      width: 100%;
+      margin-top: auto;
+      padding: 0.75rem;
+    }
+  }
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .content {
@@ -145,6 +203,12 @@
   .navSubMenu {
     justify-content: center;
     padding: 0;
+  }
+  .contractGroup {
+    flex-direction: column;
+    .contract {
+      width: 100%;
+    }
   }
 }
 
