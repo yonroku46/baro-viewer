@@ -24,7 +24,7 @@ export default async function Page(
 
   return (
     <>
-      <section>
+      <article>
         <div>
         <Swiper
           slidesPerView={1}
@@ -55,7 +55,7 @@ export default async function Page(
             Welcome to Next.js v13 <small>appDir</small> and i18next
           </Trans>
         </h2>
-      </section>
+      </article>
     </>
   )
 }

@@ -14,9 +14,9 @@ export default function Page(
 
   return (
     <>
-      <section>
+      <article>
         <p>Dashboard</p>
-      </section>
+      </article>
     </>
   )
 }

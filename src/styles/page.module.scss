@@ -185,6 +185,100 @@
   }
 }
 
+.viewBackground {
+  max-width: unset;
+  padding: unset;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url('https://cdn.wallpapersafari.com/41/42/TwPVCD.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  .viewBackgroundGlow {
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--main-glow);
+    .viewer {
+      display: flex;
+      width: 96%;
+      height: 92%;
+      gap: 1rem;
+      .left {
+        flex: 1;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: white;
+        .top {
+          .logo {
+            filter: invert(1);
+          }
+        }
+        .bottom {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          .waitingInfo {
+            display: flex;
+            flex-direction: column;
+            .title {
+              font-size: 2rem;
+            }
+            .value {
+              font-size: 4rem;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      .right {
+        flex: 1;
+        background-color: white;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+}
+
+.dialogPassword {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  input {
+    width: 50px;
+    height: 82px;
+    background-color: lightgray;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+.dialogBtn {
+  margin-top: 20px;
+  padding: 16px 24px;
+  border-radius: unset;
+  width: 100%;
+  &.active {
+    background-color: var(--main-color);
+    color: white;
+  }
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .content {
@@ -208,6 +302,11 @@
     flex-direction: column;
     .contract {
       width: 100%;
+    }
+  }
+  .viewBackground {
+    .viewer {
+      flex-direction: column;
     }
   }
 }

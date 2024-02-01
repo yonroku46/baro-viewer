@@ -15,7 +15,7 @@ export default function Page(
   const [counter, setCounter] = useState(0)
   return (
     <>
-      <section>
+      <article>
         {t('h1')}
         <p>{t('counter', { count: counter })}</p>
         <div>
@@ -27,7 +27,7 @@ export default function Page(
             {t('back-to-home')}
           </button>
         </Link>
-      </section>
+      </article>
     </>
   )
 }

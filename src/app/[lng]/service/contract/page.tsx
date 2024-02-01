@@ -25,9 +25,9 @@ type Contract = {
 }
 
 const contractList: Array<Contract> = [
-  { title: 'Light', subTitle: '소규모 사업자용(1~2인 점포)', price: 29000, priceUnit: '원', benefits: ['예약관리', '번역서비스(가게정보)'] },
-  { title: 'Basic', subTitle: '중소규모 사업자용(4인이상 점포)', price: 49000, priceUnit: '원', benefits: ['예약관리', '번역서비스(가게정보, 메뉴)', '커스텀 출력모드 제공'] },
-  { title: 'Pro', subTitle: '대규모 사업자용(10인이상 점포)', price: 89000, priceUnit: '원', benefits: ['예약관리', '번역서비스(가게정보, 메뉴)', '커스텀 출력모드 제공', '대쉬보드 제공', '매장 상단노출']  },
+  { title: 'Light', subTitle: '소규모 사업자용(1~2인 점포)', price: 29000, priceUnit: '원', benefits: ['예약관리 / 선주문', '가게정보 및 메뉴 번역제공(월 1회)'] },
+  { title: 'Basic', subTitle: '중소규모 사업자용(4인이상 점포)', price: 49000, priceUnit: '원', benefits: ['예약관리 / 선주문', '가게정보 및 메뉴 번역제공(월 4회)', '커스텀 출력모드 제공', '대쉬보드 제공'] },
+  { title: 'Pro', subTitle: '대규모 사업자용(10인이상 점포)', price: 89000, priceUnit: '원', benefits: ['예약관리 / 선주문', '가게정보 및 메뉴 번역제공(무제한)', '커스텀 출력모드 제공', '대쉬보드 제공', '매장 상단노출']  },
 ]
 
 export default function Page(
@@ -39,13 +39,13 @@ export default function Page(
 
   return (
     <>
-      <section>
+      <article>
         <div className={styles.contractInfo}>
           <div className={styles.title}>
             {'스무디랩 요금제'}
           </div>
           <div className={styles.subTitle}>
-            {'첫 1개월은 모든 요금제를 무료로 체험하실 수 있습니다!'} 
+            {'첫 1개월은 무료로 체험하실 수 있습니다!'} 
           </div>
         </div>
         <div className={styles.contractGroup}>
@@ -59,9 +59,9 @@ export default function Page(
                 {contract.subTitle}
               </div>
               <div className={styles.price}>
-                {currency(contract.price, contract.priceUnit)}
+                월 {currency(contract.price, contract.priceUnit)}
                 <span className={styles.subPrice}>
-                  1일 {currency(Math.round((contract.price / 300)) * 10, contract.priceUnit)}
+                  {currency(Math.round((contract.price / 300)) * 10, contract.priceUnit)} / 일
                 </span>
               </div>
               <List className={styles.info}>
@@ -82,7 +82,7 @@ export default function Page(
             </Paper>
           ))}
         </div>
-      </section>
+      </article>
     </>
   )
 }

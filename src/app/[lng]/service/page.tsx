@@ -11,14 +11,14 @@ export default async function Page(
   
   return (
     <>
-      <section>
+      <article>
         {t('h1')}
         <Link href={`/${lng}`}>
           <button type="button">
             {t('back-to-home')}
           </button>
         </Link>
-      </section>
+      </article>
     </>
   )
 }

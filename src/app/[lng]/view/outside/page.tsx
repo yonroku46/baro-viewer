@@ -2,23 +2,26 @@
 
 import Link from 'next/link'
 import { useTranslation } from '@/i18n/client'
-import { useState } from 'react'
+import LngButton from '@/components/button/LngButton'
 import { languages, fallbackLng } from '@/i18n/settings'
+import styles from '@/styles/page.module.scss'
 
 export default function Page(
   { params: { lng } }: { params: { lng: string } }
 ) {
-
+  
   if (languages.indexOf(lng) < 0) lng = fallbackLng
-  const { t } = useTranslation(lng)
+  const { t } = useTranslation(lng, 'view')
 
   return (
-    <article>
-      <Link href={`/${lng}/shop/1`}>
-        <button type="button">
-          No1 Shop
+    <>
+      <div className={styles.viewer}>
+        Outside
+        <LngButton lng={lng} />
+        <button type='button'>
+          대기열 참가
         </button>
-      </Link>
-    </article>
+      </div>
+    </>
   )
 }

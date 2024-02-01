@@ -15,9 +15,9 @@ export default function Page(
   const [counter, setCounter] = useState(0)
   return (
     <>
-      <section>
+      <article>
         Inquiry
-      </section>
+      </article>
     </>
   )
 }

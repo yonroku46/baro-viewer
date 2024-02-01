@@ -13,11 +13,18 @@ export default function Page(
   const { t } = useTranslation(lng, 'mypage')
 
   const [counter, setCounter] = useState(0)
+  const mode = 'outside'
+
   return (
     <>
-      <section>
-        Outside
-      </section>
+      <article>
+        출력모드 설정
+        <Link href={`/${lng}/view/${mode}`}>
+          <button type="button">
+            위 설정으로 출력
+          </button>
+        </Link>
+      </article>
     </>
   )
 }

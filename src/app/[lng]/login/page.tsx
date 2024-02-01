@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <section>
+    <article>
       <div>
         <h1>Login</h1>
         <div className={styles.socialArea}>
@@ -38,6 +38,6 @@ export default function LoginPage() {
           </button>
         </div>
       </div>
-    </section>
+    </article>
   );
 }

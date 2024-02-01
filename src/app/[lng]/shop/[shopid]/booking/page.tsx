@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function ShopBookinglPage({ params }: { params: { lng: string, shopid: string } }) {
   return (
-    <section>
+    <article>
       <h1>booking</h1>
       <div>shopid: {params.shopid}</div>
-    </section>
+    </article>
   )
 }
