@@ -1,11 +1,13 @@
 'use client'
 
+import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import { useTranslation } from '@/i18n/client'
 import LngButton from '@/components/button/LngButton'
 import { languages, fallbackLng } from '@/i18n/settings'
 import styles from '@/styles/page.module.scss'
 import AdminButton from '@/components/button/AdminButton'
+import axios from 'axios'
 
 export default function Page(
   { params: { lng } }: { params: { lng: string } }
@@ -13,6 +15,15 @@ export default function Page(
   
   if (languages.indexOf(lng) < 0) lng = fallbackLng
   const { t } = useTranslation(lng, 'view')
+
+  useEffect(() => {
+    async function getBookingList() {
+      axios.get('/api/v1/booking/list').then((res) => {
+          console.log(res)
+        }
+      )
+    }
+  }, [])
 
   return (
     <>
