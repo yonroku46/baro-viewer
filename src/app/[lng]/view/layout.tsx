@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   return languages.map((lng: string) => ({ lng }))
 }
 
-export default async function RootLayout(
+export default async function ViewLayout(
   { children }: { children: React.ReactNode }
 ) {
 

@@ -4,6 +4,7 @@ import { useTranslation } from '@/i18n'
 import { languages, fallbackLng } from '@/i18n/settings'
 import SubNav, { MenuItem } from '@/components/layout/SubNav'
 import LngButton from '@/components/button/LngButton'
+import UserButton from '@/components/button/UserButton'
 import styles from '@/styles/page.module.scss'
 
 export default async function Header (
@@ -49,11 +50,7 @@ export default async function Header (
         </Link>
         <div className={styles.flex}>
           <LngButton lng={lng} />
-          <Link href={`/${lng}/login`}>
-            <button type="button" className={styles.loginBtn}>
-              {t('category.login')}
-            </button>
-          </Link>
+          <UserButton lng={lng} />
         </div>
       </div>
       <nav role='navigation' className={styles.navMenu}>

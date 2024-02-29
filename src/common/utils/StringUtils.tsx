@@ -32,6 +32,6 @@ export function dateToString(date: Date): string {
 
 export function extractDelimiter(target: string, delimiter = '/') {
   const splitedTarget = target.split(delimiter)
-  const result = splitedTarget.length >= 3 ? `${delimiter}${splitedTarget.slice(1, splitedTarget.length).join(delimiter)}` : ''
+  const result = splitedTarget.length >= 3 ? `${delimiter}${splitedTarget.slice(1, 3).join(delimiter)}` : ''
   return result
 }

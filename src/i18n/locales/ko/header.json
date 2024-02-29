@@ -1,6 +1,7 @@
 {
   "category": {
     "login": "로그인",
+    "logout": "로그아웃",
     "mypage": "마이페이지",
     "service": "서비스",
     "shop": "매장",

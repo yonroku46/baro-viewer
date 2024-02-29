@@ -23,39 +23,36 @@ export default async function Page(
   ]
 
   return (
-    <>
-      <article>
-        <div>
-        <Swiper
-          slidesPerView={1}
-          pagination={{
-            clickable: true,
-          }}
-          loop={true}
-          autoplay
-        >
-          {images.map((src: string, index: number) => {
-            return (
-              <SwiperSlide key={`${index}`}>
-                <Image
-                  src={src}
-                  objectFit={"cover"}
-                  width={1280}
-                  height={600}
-                  alt="test_image"
-                />
-              </SwiperSlide>
-            )
-          })}
-        </Swiper>
-        </div>
-        <h2>
-          {t('h1')}
-          <Trans t={t} i18nKey="welcome">
-            Welcome to Next.js v13 <small>appDir</small> and i18next
-          </Trans>
-        </h2>
-      </article>
-    </>
+    <article>
+      <div>
+      <Swiper
+        slidesPerView={1}
+        pagination={{
+          clickable: true,
+        }}
+        loop={true}
+        autoplay
+      >
+        {images.map((src: string, index: number) => {
+          return (
+            <SwiperSlide key={`${index}`}>
+              <Image
+                src={src}
+                width={1280}
+                height={600}
+                alt="test_image"
+              />
+            </SwiperSlide>
+          )
+        })}
+      </Swiper>
+      </div>
+      <h2>
+        {t('h1')}
+        <Trans t={t} i18nKey="welcome">
+          Welcome to Next.js v13 <small>appDir</small> and i18next
+        </Trans>
+      </h2>
+    </article>
   )
 }

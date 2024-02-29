@@ -1,6 +1,7 @@
 {
   "category": {
     "login": "Login",
+    "logout": "Logout",
     "mypage": "Mypage",
     "service": "Service",
     "shop": "Shop",

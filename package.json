@@ -19,6 +19,7 @@
     "@mui/material": "^5.15.5",
     "accept-language": "3.0.18",
     "axios": "^1.6.7",
+    "event-source-polyfill": "^1.0.31",
     "i18next": "23.7.7",
     "i18next-browser-languagedetector": "7.2.0",
     "i18next-resources-to-backend": "1.2.0",
@@ -32,6 +33,7 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@types/event-source-polyfill": "^1.0.5",
     "@types/node": "20.10.0",
     "@types/react": "18.2.39",
     "eslint": "8.54.0",

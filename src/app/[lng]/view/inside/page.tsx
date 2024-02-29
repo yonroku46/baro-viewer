@@ -1,13 +1,16 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useTranslation } from '@/i18n/client'
 import LngButton from '@/components/button/LngButton'
 import { languages, fallbackLng } from '@/i18n/settings'
 import styles from '@/styles/page.module.scss'
 import AdminButton from '@/components/button/AdminButton'
-import axios from 'axios'
+import BookingService from '@/api/service/BookingService'
+import { BookingInfo } from '@/api/types/BookingTypes'
+import ShopService from '@/api/service/ShopService'
+import { EventSourcePolyfill } from 'event-source-polyfill'
 
 export default function Page(
   { params: { lng } }: { params: { lng: string } }
@@ -16,14 +19,49 @@ export default function Page(
   if (languages.indexOf(lng) < 0) lng = fallbackLng
   const { t } = useTranslation(lng, 'view')
 
+  const bookingService = new BookingService()
+  const shopService = new ShopService()
+
+  const [bookingList, setBookingList] = useState<Array<BookingInfo>>()
+  const [streamData, setStreamData] = useState<Array<any>>();
+  
   useEffect(() => {
-    async function getBookingList() {
-      axios.get('/api/v1/booking/list').then((res) => {
-          console.log(res)
+    const eventSource = new EventSourcePolyfill('/api/v1/shop/stream/1',
+      {
+        headers: {
+          ContentType: 'text/event-stream',
+          Authorization: `Bearer ${localStorage.getItem('token')}`
         }
-      )
+      }
+    )
+
+    eventSource.onopen = async () => {
+      bookingService.getBookingList().then((data) => {
+        setBookingList(data)
+      })
+    }
+
+    eventSource.onmessage = async (res: { data: any }) => {
+      const data = await res.data
+      const eventData = JSON.parse(data)
+      setStreamData(prev => [...prev!, eventData])
+    }
+
+    eventSource.onerror = async (error)  => {
+      console.error(error)
+      eventSource.close()
+    }
+
+    return () => {
+      eventSource.close()
     }
   }, [])
+
+  useEffect(() => {
+    if (streamData) {
+      console.log(streamData)
+    }
+  }, [streamData])
 
   return (
     <>
@@ -62,10 +100,18 @@ export default function Page(
         {/* right view  */}
         <div className={styles.right}>
           <AdminButton lng={lng} />
-          Inside
-          설정내용: 배경, 본문배경, 로고, 안내내용, 1인당 대기시간설정, 호출 후 시한설정 등
           <LngButton lng={lng} />
-          <button type='button'>
+          {bookingList?.map((booking, idx) => (
+            <div key={idx}>
+              <span>
+                {booking.shopBookingNumberAsString}
+              </span>
+              <span>
+                {booking.userName}
+              </span>
+            </div>
+          ))}
+          <button type='button' onClick={() => bookingService.booking()}>
             대기열 참가
           </button>
         </div>

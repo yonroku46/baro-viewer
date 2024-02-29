@@ -4,15 +4,17 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import AdminDialog from './AdminDialog'
 import { useTranslation } from '@/i18n/client'
-import { AvailableLanguages } from '@/i18n/settings'
+import { languages, fallbackLng } from '@/i18n/settings'
 
 import Button from '@mui/material/Button'
-import Avatar from '@mui/material/Avatar'
 
 export default function AdminButton (
   { lng }: { lng: string }
 ) {
+
+  if (languages.indexOf(lng) < 0) lng = fallbackLng
   const { i18n } = useTranslation(lng)
+
   const path = usePathname().substring(3);
   const [open, setOpen] = useState<boolean>(false)
 

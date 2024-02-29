@@ -14,6 +14,7 @@ export type MenuItem = {
 export default function SubNav (
   { groupedMenu }: { groupedMenu: Record<string, Array<MenuItem>> }
 ) {
+  
   const path = usePathname()
   const categoryPath = extractDelimiter(path)
 

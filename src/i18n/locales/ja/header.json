@@ -1,6 +1,7 @@
 {
   "category": {
     "login": "ログイン",
+    "logout": "ログアウト",
     "mypage": "マイページ",
     "service": "サービス",
     "shop": "店舗",
